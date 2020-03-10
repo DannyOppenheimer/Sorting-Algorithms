@@ -13,7 +13,7 @@
 
 class sequential_sort : public base_sort {
 public:
-    sequential_sort(int par_array[], unsigned int array_size) : base_sort(par_array, array_size) {}
+    sequential_sort(int par_array[], unsigned int* array_size) : base_sort(par_array, array_size) {}
 
     void sort() {
         for(unsigned int i = 0; i < this->size; ++i) {
@@ -23,10 +23,12 @@ public:
 
             for(unsigned int e = i; e < this->size; ++e) {
                 if(this->array[e] < current_low) {
+                    // if it passes by a number that is lower than the current low, then overrite the current low
                     current_low = this->array[e];
                     index_of_low = e;
                 }
             }
+            // finally, perform the swap (current_low acts as the savespace).
             this->array[index_of_low] = this->array[i];
             this->array[i] = current_low;
         }

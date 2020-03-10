@@ -1,8 +1,8 @@
 class base_sort {
 public:
-    base_sort(int par_array[], unsigned int array_size) {
+    base_sort(int par_array[], unsigned int* array_size) {
         this->array = par_array;
-        this->size = array_size;
+        this->size = *array_size;
     }
 
     virtual void sort() = 0;
