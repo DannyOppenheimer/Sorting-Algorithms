@@ -2,6 +2,7 @@
 #include <iostream>
 #include <limits>
 #include <algorithm> 
+#include <string>
 
 #include "super_classes.hpp"
 /*
@@ -11,14 +12,15 @@
 * Then do the same for the 2nd, 3rd, 4th, etc...
 */
 
-class sequential_sort : public base_sort {
+template<typename T>
+class sequential_sort : public base_sort<T> {
 public:
-    sequential_sort(int par_array[], unsigned int* array_size) : base_sort(par_array, array_size) {}
+    sequential_sort(T par_array[], unsigned int* array_size) : base_sort<T>(par_array, array_size) {}
 
     void sort() {
         for(unsigned int i = 0; i < this->size; ++i) {
             // keep track of both the smallest number, and it's index.
-            int current_low = std::numeric_limits<int>::max();
+            int current_low = 1000; // TODO: make this work for all types
             unsigned int index_of_low;
 
             for(unsigned int e = i; e < this->size; ++e) {

@@ -1,7 +1,7 @@
 #include "super_classes.hpp"
 #include <iostream>
 
-class bubble_sort : public base_sort {
+class bubble_sort : public base_sort<int> {
 
 public:
     bubble_sort(int par_array[], unsigned int* array_size) : base_sort(par_array, array_size){}

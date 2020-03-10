@@ -4,7 +4,8 @@
 #include "merge_sort.cpp"
 #include "insertion_sort.cpp"
 
-void printArr(int array[], int size) {
+template<typename T>
+void printArr(T array[], int size) {
     std::cout << "----- Array -----" << std::endl;
 
     for(unsigned int i = 0; i < size; ++i) {

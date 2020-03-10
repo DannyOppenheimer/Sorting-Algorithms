@@ -1,20 +1,21 @@
+template<typename T>
 class base_sort {
 public:
-    base_sort(int par_array[], unsigned int* array_size) {
+    base_sort(T par_array[], unsigned int* array_size) {
         this->array = par_array;
         this->size = *array_size;
     }
 
     virtual void sort() = 0;
 
-    int* getArray() {
-        return array;
+    T* getArray() {
+        return this->array;
     }
 
     int getSize() {
-        return size;
+        return this->size;
     }
 protected:
-    int* array;
+    T* array;
     unsigned int size;
 };
