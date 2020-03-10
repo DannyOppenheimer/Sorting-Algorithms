@@ -13,9 +13,7 @@
 
 class sequential_sort : public base_sort {
 public:
-    sequential_sort(int par_array[], unsigned int array_size) : base_sort(par_array, array_size) {
-
-    }
+    sequential_sort(int par_array[], unsigned int array_size) : base_sort(par_array, array_size) {}
 
     void sort() {
         for(unsigned int i = 0; i < this->size; ++i) {

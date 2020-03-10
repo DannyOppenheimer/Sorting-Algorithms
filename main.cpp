@@ -3,9 +3,10 @@
 
 int main() {
 
-    int pass[3] = {1, 2, 3};
-    sequential_sort seq = sequential_sort(pass, 3);
-    seq.sort();
-    std::cout << seq.getArray()[0] << seq.getArray()[1] << seq.getArray()[2] << std::endl;
+    int pass[6] = {70, 30, 40, 5, -1, -70};
+    bubble_sort bub = bubble_sort(pass, 6);
+    bub.sort();
+    visualize(bub.getArray(), bub.getSize());
+
     return 0;
 }
