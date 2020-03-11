@@ -20,13 +20,17 @@ public:
     void sort() {
         for(unsigned int i = 0; i < this->size; ++i) {
             // keep track of both the smallest number, and it's index.
-            int current_low = 1000; // TODO: make this work for all types
+
+            T current_low;
+            // create an empty space in memory to store the first value, as to not cause a Segmentation fault: 11
+            T* empty_mem_loc = nullptr;
             unsigned int index_of_low;
 
             for(unsigned int e = i; e < this->size; ++e) {
-                if(this->array[e] < current_low) {
+                if(this->array[e] < current_low || empty_mem_loc == nullptr) {
                     // if it passes by a number that is lower than the current low, then overrite the current low
                     current_low = this->array[e];
+                    empty_mem_loc = &current_low;
                     index_of_low = e;
                 }
             }

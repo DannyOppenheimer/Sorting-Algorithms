@@ -3,14 +3,11 @@
 #include "common_sort.hpp"
 
 int main() {
-
-    int pass[4] = {1, -1, 4, 10};
-
-    unsigned int size = 4;
-
-    sequential_sort<int> ins = sequential_sort<int>(pass, &size);
-    ins.sort();
-    printArr<int>(ins.getArray(), ins.getSize());
-
+    
+    char words[] = {'S', 't', 'e', 'p', 'h', 'e', 'n'};
+    unsigned int size = 7;
+    sequential_sort<char> seq = sequential_sort<char>(words, &size);
+    seq.sort();
+    printArr(seq.getArray(), seq.getSize());
     return 0;
 }

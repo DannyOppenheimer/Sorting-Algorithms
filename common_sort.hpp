@@ -12,7 +12,3 @@ void printArr(T array[], int size) {
         std::cout << i + 1 << ".) " << array[i] << std::endl;
     }
 }
-
-int getTrailingValue(int x) {
-    return abs(static_cast<int>(x*10))%10;
-}
